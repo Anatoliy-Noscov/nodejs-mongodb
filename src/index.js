@@ -1,3 +1,10 @@
-// import path from 'node:path';
-// index.js
-console.log("Сервер запущен с помощью nodemon!");
+
+import { initMongoConnection } from './db/initMongoConnection.js';
+import { setupServer } from './server.js';
+
+const bootstrap = async () => {
+  await initMongoConnection();
+  setupServer();
+};
+
+bootstrap();

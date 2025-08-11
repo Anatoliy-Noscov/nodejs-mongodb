@@ -17,3 +17,4 @@ export const initMongoConnection = async () => {
     throw e;
   }
 };
+

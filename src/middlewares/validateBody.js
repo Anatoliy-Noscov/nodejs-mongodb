@@ -1,4 +1,3 @@
-
 import createHttpError from 'http-errors';
 
 export const validateBody = (schema) => async (req, res, next) => {
@@ -14,6 +13,3 @@ export const validateBody = (schema) => async (req, res, next) => {
     next(error);
   }
 };
-// const validateBody = createStudentSchema.validate(userData, {
-//     abortEarly: false,
-//   });

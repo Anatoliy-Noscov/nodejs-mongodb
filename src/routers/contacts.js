@@ -12,7 +12,6 @@ import { validateBody } from '../middlewares/validateBody.js';
 import { createContactSchema } from '../validation/contacts.js';
 import { updateContactSchema } from '../validation/contacts.js';
 import { isValidId } from '../middlewares/isValidId.js';
-import { validateParams } from '../middlewares/validateParams.js';
 
 const router = new Router();
 

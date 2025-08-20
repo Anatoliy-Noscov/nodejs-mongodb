@@ -13,7 +13,6 @@ export const setupServer = () => {
 
   app.use(express.json());
   app.use(cors());
-
   app.use(pino());
 
   app.get('/', (req, res) => {
@@ -24,9 +23,7 @@ export const setupServer = () => {
 
   app.use(router);
 
-  app.use((req, res, next) => {
-    notFoundHandler(req, res, next);
-  });
+  app.use(notFoundHandler);
   
   app.use(errorHandler);
 

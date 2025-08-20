@@ -9,7 +9,7 @@ export const contactsSchema = new Schema(
         required: true,
     },
 
-    phoneNumber: {
+    phone: {
         type: String, 
         required: true,
     },
@@ -18,7 +18,7 @@ export const contactsSchema = new Schema(
         type: String,
     },
 
-    isFavourite: {
+    favorite: {
         type: Boolean,
         default: false,
     },

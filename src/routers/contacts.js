@@ -22,8 +22,9 @@ router.post('/contacts', validateBody(createContactSchema),
 ctrlWrapper(createContactController));
 router.delete('/contacts/:contactId', 
   isValidId,  ctrlWrapper(deleteContactController));
+
 router.patch('/contacts/:contactId', 
   isValidId,
-  validateParams(updateContactSchema),ctrlWrapper(patchContactController));
+  validateBody(updateContactSchema),ctrlWrapper(patchContactController));
 
 export default router;

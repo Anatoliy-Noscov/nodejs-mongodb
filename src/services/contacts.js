@@ -22,7 +22,7 @@ export const getAllContacts = async ({
     contactsQuery.where('gender').equals(filter.gender);
   }
   if(filter.maxAge) {
-    contacts.Query.where('age').lte(filter.maxAge);
+    contactsQuery.where('age').lte(filter.maxAge);
   }
   if(filter.minAge) {
     contactsQuery.where('age').gte(filter.minAge);

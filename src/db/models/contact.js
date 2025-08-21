@@ -3,7 +3,7 @@ const { Schema, model } = mongoose;
 
 export const contactsSchema = new Schema({
   name: { type: String, required: true },
-  phone: { type: String, required: true },
+  phoneNumber: { type: String, required: true },
   email: { type: String },
   isFavorite: { type: Boolean, default: false },
   contactType: { 

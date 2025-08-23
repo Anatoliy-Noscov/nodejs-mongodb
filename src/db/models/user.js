@@ -1,4 +1,6 @@
 import { model, Schema } from 'mongoose';
+import { ROLES } from '../../constants/index.js';
+
 
 const userSchema = new Schema(
   {
@@ -10,7 +12,13 @@ const userSchema = new Schema(
       match: [/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/, 'Please enter a valid email']
     },
     password: { type: String, required: true },
+    role: {
+      type: String,
+      enum: [ROLES.TEACHER, ROLES.PARENT],
+      default: ROLES.PARENT,
+    },
   },
+  
   { 
     timestamps: {
       createdAt: 'createdAt', 
@@ -27,3 +35,5 @@ userSchema.methods.toJSON = function() {
 }
 
 export const User = model('User', userSchema);
+
+

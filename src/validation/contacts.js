@@ -6,9 +6,7 @@ export const createContactSchema = Joi.object({
   phoneNumber: Joi.string().pattern(/^(\+38|8|380)\d{10}$/).required(),
   isFavourite: Joi.boolean(),
   contactType: Joi.string().valid('work', 'home', 'personal').default('personal'),
-  age: Joi.number().integer().min(6).max(16).required(),
-  gender: Joi.string().valid('male', 'female', 'other').required(),
-  onDuty: Joi.boolean(),
+ 
 });
 
 export const updateContactSchema = Joi.object({

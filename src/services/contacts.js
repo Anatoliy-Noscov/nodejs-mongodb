@@ -7,7 +7,6 @@ export const getAllContacts = async ({
   perPage,
   sortOrder = SORT_ORDER.ASC,
   sortBy = '_id',
-  filter = {},
   userId,
 }) => {
   const limit = perPage;
@@ -15,21 +14,6 @@ export const getAllContacts = async ({
 
   const contactsQuery = ContactsCollection.find({ userId });
 
-  if (filter.gender) {
-    contactsQuery.where('gender').equals(filter.gender);
-  }
-  if (filter.maxAge) {
-    contactsQuery.where('age').lte(filter.maxAge);
-  }
-  if (filter.minAge) {
-    contactsQuery.where('age').gte(filter.minAge);
-  }
-  if (filter.maxAvgMark) {
-    contactsQuery.where('avgMark').lte(filter.maxAvgMark);
-  }
-  if (filter.minAvgMark) {
-    contactsQuery.where('avgMark').gte(filter.minAvgMark);
-  }
 
   const [contactsCount, contacts] = await Promise.all([
     ContactsCollection.find().merge(contactsQuery).countDocuments(),

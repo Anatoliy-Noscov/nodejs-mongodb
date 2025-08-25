@@ -10,6 +10,11 @@ export const contactsSchema = new Schema({
     type: String, 
     enum: ['work', 'home', 'personal'], 
     default: 'personal'
+  },
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
   }
 }, {
   timestamps: true, 

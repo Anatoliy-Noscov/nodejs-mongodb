@@ -53,7 +53,7 @@ import {
     console.log('User ID from request:', req.user._id);
     console.log('Request body:', req.body);
     console.log('Uploaded file:', req.file); 
-
+  
     let photoUrl;
     if (req.file) {
       if (getEnvVar('ENABLE_CLOUDINARY') === 'true') {
@@ -62,14 +62,11 @@ import {
         photoUrl = await saveFileToUploadDir(req.file);
       }
     }
-
-    const contactData = {
-      ...req.body,
-      photo: photoUrl,
-      userId: req.user._id
-    }
-    
-    const contact = await createContact(contactData);
+  
+    const contact = await createContact(
+      { ...req.body, photo: photoUrl },
+      req.user._id                      
+    );
     
     console.log('Created contact:', contact);
   
@@ -94,34 +91,32 @@ import {
   export const patchContactController = async (req, res, next) => {
     const { contactId } = req.params;
     const photo = req.file;
-
+  
     let photoUrl;
-
+  
     if (photo) {
-      if (getEnvVar ('ENABLE_CLOUDINARY') === 'true') {
-
-      photoUrl = await saveFileToCloudinary(photo);
+      if (getEnvVar('ENABLE_CLOUDINARY') === 'true') {
+        photoUrl = await saveFileToCloudinary(photo);
       } else {
-
-      photoUrl = await saveFileToUploadDir(photo);
+        photoUrl = await saveFileToUploadDir(photo);
+      }
     }
-  }
-
-    const result = await updateContact(contactId, {
-      ...req.body,
-      photo: photoUrl,
-    });
-    
+  
+    const result = await updateContact(
+      contactId, 
+      { ...req.body, photo: photoUrl },
+      req.user._id 
+    );
+      
     if(!result) {
-      next(createHttpError(404, 'Student not found'));
+      next(createHttpError(404, 'Contact not found'));
       return;
     }
-
+  
     res.json({
       status: 200, 
       message: `Successfully patched a contact!`,
-      data: result.contact,
-    })
-
+      data: result, 
+    });
   };
   

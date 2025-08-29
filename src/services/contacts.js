@@ -41,7 +41,7 @@ export const createContact = async (payload, userId) => {
   console.log('Service - User ID:', userId); 
   console.log('Service - Payload:', payload); 
   
-  const contact = await ContactsCollection.create({ ...payload, userId });
+  const contact = await ContactsCollection.create({ ...payload, userId: userId });
   
   console.log('Service - Created contact:', contact); 
   return contact;

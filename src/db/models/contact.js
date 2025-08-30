@@ -10,10 +10,17 @@ export const contactsSchema = new Schema({
     type: String, 
     enum: ['work', 'home', 'personal'], 
     default: 'personal'
-  }
+  },
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  },
+  photo: {type: String},
 }, {
   timestamps: true, 
   versionKey: false,
 });
 
 export const ContactsCollection = model('Contacts', contactsSchema);
+

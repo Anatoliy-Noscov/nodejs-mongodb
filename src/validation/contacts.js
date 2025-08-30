@@ -5,7 +5,8 @@ export const createContactSchema = Joi.object({
   email: Joi.string().email().required(),
   phoneNumber: Joi.string().pattern(/^(\+38|8|380)\d{10}$/).required(),
   isFavourite: Joi.boolean(),
-  contactType: Joi.string().valid('work', 'home', 'personal').default('personal')
+  contactType: Joi.string().valid('work', 'home', 'personal').default('personal'),
+ 
 });
 
 export const updateContactSchema = Joi.object({

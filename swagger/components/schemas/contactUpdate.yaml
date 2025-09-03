@@ -1,0 +1,22 @@
+type: object
+properties:
+  name:
+    description: "Contact's name"
+    type: string
+    example: 'John Doe'
+  age:
+    description: "Contact's age"
+    type: number
+    example: 12
+  gender:
+    description: "Contact's gender"
+    type: string
+    enum: ['male', 'female', 'other']
+  avgMark:
+    description: "Contact's average mark. Should be between 1 and 12"
+    type: number
+    example: 9.7
+  onDuty:
+    description: 'Whether contact is on duty'
+    type: boolean
+    example: false

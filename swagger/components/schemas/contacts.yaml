@@ -1,0 +1,43 @@
+
+type: object
+required:
+  - _id
+  - name
+  - age
+  - gender
+  - avgMark
+  - onDuty
+properties:
+  _id:
+    description: "Contact's id"
+    type: string
+    example: 65e4decdd286b30065d54af9
+  name:
+    description: "Contacts name"
+    type: string
+    example: 'John Doe'
+  age:
+    description: "Contacts age"
+    type: number
+    example: 12
+  gender:
+    description: "Contacts age"
+    type: string
+    enum: ['male', 'female', 'other']
+  avgMark:
+    description: "Contacts average mark. Should be between 1 and 12"
+    type: number
+    example: 9.7
+  onDuty:
+    description: 'Whether is contact on duty'
+    type: boolean
+    example: false
+  parentId:
+    description: "Contacts parent id"
+    type: string
+    example: 65e4decdd286b30065d54af9
+  photo:
+    description: "Link to contacts photo"
+    type: string
+    example: https://res.cloudinary.com/uqwgdu/image/upload/image.png
+

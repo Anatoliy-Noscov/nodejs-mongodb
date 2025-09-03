@@ -16,6 +16,6 @@ responses:
   '204':
     description: 'Successfully deleted contact'
   '401':
-    $ref: '../swagger/components/responses/401.yaml'
+    $ref: '../../../components/responses/401.yaml'
   '404':
-    $ref: '../swagger/components/responses/404.yaml'
+    $ref: '../../../components/responses/404.yaml'

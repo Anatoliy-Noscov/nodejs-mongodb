@@ -16,7 +16,7 @@ requestBody:
   content:
     application/json:
       schema:
-        $ref: '../swagger/components/schemas/contactUpdate.yaml'
+        $ref: '../../../components/schemas/contactUpdate.yaml'
 responses:
   '200':
     description: 'Successfully updated contact'
@@ -37,8 +37,8 @@ responses:
               example: Successfully updated contact!
             data:
               type: object
-              $ref: '../swagger/components/schemas/contacts.yaml'
+              $ref: '../../../components/schemas/contacts.yaml'
   '401':
-    $ref: '../swagger/components/responses/401.yaml'
+    $ref: '../../../components/responses/401.yaml'
   '404':
-    $ref: '../swagger/components/responses/404.yaml'
+    $ref: '../../../components/responses/404.yaml'

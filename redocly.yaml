@@ -1,13 +1,3 @@
-# apis:
-#   sample@v1:
-#     root: docs/openapi.yaml
-# extends:
-#   - recommended
-# rules:
-#   no-unused-components: error
-
-
-
 apis:
   sample@v1:
     root: docs/openapi.yaml
@@ -15,15 +5,25 @@ extends:
   - recommended
 rules:
   no-unused-components: error
-theme:
-  openapi:
-    htmlTemplate: ./docs/index.html
-    theme:
-      colors:
-        primary:
-          main: '#32329f'
-    generateCodeSamples:
-      languages: 
-        - lang: curl
-        - lang: Node.js
-        - lang: JavaScript
+
+
+
+# apis:
+#   sample@v1:
+#     root: docs/openapi.yaml
+# extends:
+#   - recommended
+# rules:
+#   no-unused-components: error
+# theme:
+#   openapi:
+#     htmlTemplate: ./docs/index.html
+#     theme:
+#       colors:
+#         primary:
+#           main: '#32329f'
+#     generateCodeSamples:
+#       languages: 
+#         - lang: curl
+#         - lang: Node.js
+#         - lang: JavaScript

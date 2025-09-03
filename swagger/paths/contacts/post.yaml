@@ -2,7 +2,7 @@ tags:
   - Contacts
 summary: Create contacts
 operationId: createContacts
-description: 'Create a student with payload'
+description: 'Create a contact with payload'
 security:
   - bearerAuth: []
 requestBody:
@@ -18,31 +18,31 @@ requestBody:
           - parentId
         properties:
           name:
-            description: "Contacts name"
+            description: "Contact's name"
             type: string
             example: 'John Doe'
           age:
-            description: Contacts age"
+            description: "Contact's age"
             type: number
             example: 12
           gender:
-            description: Contacts age"
+            description: "Contact's gender"
             type: string
             enum: ['male', 'female', 'other']
           avgMark:
-            description: Contacts average mark. Should be between 1 and 12"
+            description: "Contact's average mark. Should be between 1 and 12"
             type: number
             example: 9.7
           onDuty:
-            description: 'Whether is contact on duty'
+            description: 'Whether contact is on duty'
             type: boolean
             example: false
           parentId:
-            description: Contacts parent id"
+            description: "Contact's parent id"
             type: string
             example: 65e4decdd286b30065d54af9
           photo:
-            description: Contacts photo"
+            description: "Contact's photo"
             type: string
             format: binary
 responses:
@@ -62,10 +62,9 @@ responses:
               example: 201
             message:
               type: string
-              example: Successfully created a student!
+              example: Successfully created a contact!
             data:
               type: object
-              $ref: '../swagger/components/schemas/contact.yaml'
+              $ref: '../../components/schemas/contacts.yaml'
   '401':
     $ref: '../../components/responses/401.yaml'
-

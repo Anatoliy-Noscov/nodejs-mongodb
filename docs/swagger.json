@@ -201,8 +201,8 @@
                     "enum": ["work", "home", "personal"],
                     "example": "personal"
                   },
-                  "avatar": {
-                    "description": "Contact's avatar image",
+                  "photo": {
+                    "description": "Contact's photo",
                     "type": "string",
                     "format": "binary"
                   }
@@ -309,7 +309,7 @@
           }
         }
       },
-      "put": {
+      "patch": {
         "tags": [
           "Contacts"
         ],
@@ -365,8 +365,8 @@
                     "enum": ["work", "home", "personal"],
                     "example": "personal"
                   },
-                  "avatar": {
-                    "description": "Contact's avatar image",
+                  "photo": {
+                    "description": "Contact's photo",
                     "type": "string",
                     "format": "binary"
                   }
@@ -518,8 +518,8 @@
             "type": "string",
             "example": "65e4decdd286b30065d54af9"
           },
-          "avatarURL": {
-            "description": "Link to contact's avatar",
+          "photo": {
+            "description": "Link to contact's photo",
             "type": "string",
             "example": "https://res.cloudinary.com/uqwgdu/image/upload/image.png"
           },
